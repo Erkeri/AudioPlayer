@@ -48,3 +48,28 @@ F:\Projects\GitHub Projects\AudioPlayer\AudioPlayer\obj\Debug\AudioPlayer.csproj
 F:\Projects\GitHub Projects\AudioPlayer\AudioPlayer\obj\Debug\AudioPlayer.csproj.CopyComplete
 F:\Projects\GitHub Projects\AudioPlayer\AudioPlayer\obj\Debug\AudioPlayer.exe
 F:\Projects\GitHub Projects\AudioPlayer\AudioPlayer\obj\Debug\AudioPlayer.pdb
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\bin\Debug\bass.dll
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\bin\Debug\AudioPlayer.exe.config
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\bin\Debug\AudioPlayer.exe
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\bin\Debug\AudioPlayer.pdb
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\bin\Debug\Bass.Net.dll
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\bin\Debug\Microsoft.Expression.Interactions.dll
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\bin\Debug\System.Windows.Interactivity.dll
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\bin\Debug\Microsoft.Expression.Interactions.xml
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\bin\Debug\System.Windows.Interactivity.xml
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\AudioPlayer.csprojAssemblyReference.cache
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\Views\Windows\MainWindow.g.cs
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\App.g.cs
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\AudioPlayer_Content.g.cs
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\AudioPlayer_MarkupCompile.cache
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\AudioPlayer_MarkupCompile.lref
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\App.baml
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\Views\Windows\MainWindow.baml
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\AudioPlayer.g.resources
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\AudioPlayer.Properties.Resources.resources
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\AudioPlayer.csproj.GenerateResource.cache
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\AudioPlayer.csproj.CoreCompileInputs.cache
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\AudioPlayer.csproj.CopyComplete
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\AudioPlayer.exe
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\AudioPlayer.pdb

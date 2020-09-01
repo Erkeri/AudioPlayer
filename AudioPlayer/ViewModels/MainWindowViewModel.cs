@@ -206,7 +206,7 @@ namespace AudioPlayer.ViewModels
         private void OnPlayMusicCommandExecuted(object parameter)
         {
             trackTimer = new TrackTimer(TimerTick);
-            AudioManagement.Play(VolumeValue);
+            AudioManagement.Play();
             trackTimer.TimerStart(SliderValue);
             _conditionStream = ConditionStream.Play;
         }
@@ -311,7 +311,9 @@ namespace AudioPlayer.ViewModels
                 if (_listBoxSelectedIndex != -1)
                 {
                     _conditionStream = ConditionStream.Stop;
-                    AudioManagement.CreateStreamOfFile(PathConverter.GetFailPathInProject(_audioList[ListBoxSelectedIndex].NameAudio));
+                    AudioManagement.CreateStreamOfFile(
+                        PathConverter.GetFailPathInProject(_audioList[ListBoxSelectedIndex].NameAudio),
+                        VolumeValue);
                     SliderMaximumValue = AudioManagement.GetTimeOfStream(AudioManagement.Stream);
                     TextBlockAudioName = AudioList[ListBoxSelectedIndex].NameAudio;
                     MaximumTimeAudio = TimeConverter.SecondsInString(AudioManagement.GetTimeOfStream(AudioManagement.Stream));

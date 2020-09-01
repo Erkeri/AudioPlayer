@@ -41,12 +41,13 @@ namespace AudioPlayer.Infrastructure.Management
         /// Создаёт канал звука из файла
         /// </summary>
         /// <param name="filename"></param>
-        public static void CreateStreamOfFile(string filename)
+        public static void CreateStreamOfFile(string filename, int volume)
         {
             if (InitBass(SamplingFrequency))
             {
                 Stop();
                 Stream = Bass.BASS_StreamCreateFile(filename, 0, 0, BASSFlag.BASS_DEFAULT);
+                SetVolumeToStream(Stream, volume);
             }
         }
 
@@ -54,14 +55,10 @@ namespace AudioPlayer.Infrastructure.Management
         /// Запускает установленный поток
         /// </summary>
         /// <param name="volume"></param>
-        public static void Play(int volume)
+        public static void Play()
         {
             if (InitBass(SamplingFrequency) && Stream != 0)
-            {
-                Volume = volume;
-                Bass.BASS_ChannelSetAttribute(Stream, BASSAttribute.BASS_ATTRIB_VOL, Volume / 100f);
                 Bass.BASS_ChannelPlay(Stream, false);
-            }
         }
 
         /// <summary>
@@ -76,7 +73,7 @@ namespace AudioPlayer.Infrastructure.Management
         /// <summary>
         /// Останавливает текущий поток
         /// </summary>
-        public static void Pause() => Bass.BASS_ChannelStop(Stream);
+        public static void Pause() => Bass.BASS_ChannelPause(Stream);
 
         /// <summary>
         /// Останавливает текущий поток и очищает его
