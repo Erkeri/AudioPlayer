@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Release\
 AudioPlayer
 none
 false
-DEBUG;TRACE
+TRACE
 F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\App.xaml
 11895717287
-1115167091
-17-884284361
+12-381720215
+171919228641
 18-652605878
 Views\Windows\MainWindow.xaml;
 

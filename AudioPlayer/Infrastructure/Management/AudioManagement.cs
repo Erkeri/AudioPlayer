@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Windows;
 using Un4seen.Bass;
 
 namespace AudioPlayer.Infrastructure.Management
@@ -36,7 +38,6 @@ namespace AudioPlayer.Infrastructure.Management
                 InitDefaultDevice = Bass.BASS_Init(-1, samplingFrequency, BASSInit.BASS_DEVICE_DEFAULT, IntPtr.Zero);
             return InitDefaultDevice;
         }
-
         /// <summary>
         /// Создаёт канал звука из файла
         /// </summary>

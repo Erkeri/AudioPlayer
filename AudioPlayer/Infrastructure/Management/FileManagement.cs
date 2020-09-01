@@ -1,4 +1,5 @@
 ﻿using AudioPlayer.Infrastructure.Converters;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,6 +15,17 @@ namespace AudioPlayer.Infrastructure.Management
 
         #endregion
 
+        private static List<string> supportedFormat = new List<string>()
+        {
+            ".mp3",
+            ".flac",
+            ".ogg",
+            ".aac",
+            ".ac3",
+            ".opus",
+            ".tta"
+        };
+
         /// <summary>
         /// Возвращает список аудиозаписей из папки Music или создаёт эту папку если она не существует
         /// </summary>
@@ -27,7 +39,10 @@ namespace AudioPlayer.Infrastructure.Management
             }
             else
             {
-                List<string> audioList = Directory.GetFileSystemEntries(_path, "*.mp3").ToList();
+                List<string> audioList = new List<string>();
+                foreach (var format in supportedFormat)
+                    foreach (var item in Directory.GetFileSystemEntries(_path, $"*{format}").ToList())
+                        audioList.Add(item);
                 for (int item = 0; item < audioList.Count; item++)
                     audioList[item] = PathConverter.GetFileNameOfPath(audioList[item]);
                 return audioList;
@@ -42,7 +57,8 @@ namespace AudioPlayer.Infrastructure.Management
         {
             if (!Directory.Exists(_path))
                 Directory.CreateDirectory(_path);
-            File.Copy(path, _path + @"\" + PathConverter.GetFileNameOfPath(path));
+            try { File.Copy(path, _path + @"\" + PathConverter.GetFileNameOfPath(path)); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         /// <summary>
@@ -60,8 +76,8 @@ namespace AudioPlayer.Infrastructure.Management
         /// </summary>
         public static void SetAudio()
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "mp3 files (*.mp3)|*.mp3";
+            OpenFileDialog openFileDialog = new OpenFileDialog();//.mid .flac .ogg .aac .ac3 .opus .tta .wv
+            openFileDialog.Filter = GetOpenDialogFilter();
             openFileDialog.Multiselect = true;
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -69,6 +85,18 @@ namespace AudioPlayer.Infrastructure.Management
                 foreach(string fileName in fileNames)
                     CopyAudio(fileName);
             }
+        }
+
+        private static string GetOpenDialogFilter()
+        {
+            string fileFilter = "";
+            string allformat = "";
+            foreach (var format in supportedFormat)
+            {
+                fileFilter += $"{format} files |*{format}|";
+                allformat += $"*{format};";
+            }
+            return fileFilter + $"All files({allformat})|{allformat}";
         }
 
         /// <summary>

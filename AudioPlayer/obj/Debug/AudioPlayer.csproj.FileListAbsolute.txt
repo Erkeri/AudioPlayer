@@ -57,7 +57,6 @@ F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\bin\Debug\Microsoft.Expressio
 F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\bin\Debug\System.Windows.Interactivity.dll
 F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\bin\Debug\Microsoft.Expression.Interactions.xml
 F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\bin\Debug\System.Windows.Interactivity.xml
-F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\AudioPlayer.csprojAssemblyReference.cache
 F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\Views\Windows\MainWindow.g.cs
 F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\App.g.cs
 F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\AudioPlayer_Content.g.cs
@@ -73,3 +72,4 @@ F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\AudioPlayer.csproj.
 F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\AudioPlayer.csproj.CopyComplete
 F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\AudioPlayer.exe
 F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\AudioPlayer.pdb
+F:\Projects\GitHubProjects\AudioPlayer\AudioPlayer\obj\Debug\AudioPlayer.csprojAssemblyReference.cache
