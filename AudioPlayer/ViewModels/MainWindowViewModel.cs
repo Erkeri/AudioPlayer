@@ -207,7 +207,7 @@ namespace AudioPlayer.ViewModels
         {
             trackTimer = new TrackTimer(TimerTick);
             AudioManagement.Play();
-            trackTimer.TimerStart(SliderValue);
+            trackTimer.StartTimer(SliderValue);
             _conditionStream = ConditionStream.Play;
         }
 
@@ -228,7 +228,7 @@ namespace AudioPlayer.ViewModels
         private void OnPauseMusicCommandExecuted(object parameter)
         {
             AudioManagement.Pause();
-            trackTimer?.TimerStop();
+            trackTimer?.StopTimer();
             _conditionStream = ConditionStream.Pause;
         }
 
@@ -249,7 +249,7 @@ namespace AudioPlayer.ViewModels
         private void OnStopMusicCommandExecuted(object parameter)
         {
             AudioManagement.Stop();
-            trackTimer.TimerStop();
+            trackTimer.StopTimer();
             _conditionStream = ConditionStream.Stop;
             CurrentTimeAudio = "00:00:00";
             SliderValue = 0;
@@ -305,19 +305,18 @@ namespace AudioPlayer.ViewModels
         {
             try
             {
-                trackTimer?.TimerStop();
+                trackTimer?.StopTimer();
                 SliderValue = 0;
                 CurrentTimeAudio = "00:00:00";
                 if (_listBoxSelectedIndex != -1)
                 {
                     _conditionStream = ConditionStream.Stop;
-                    AudioManagement.CreateStreamOfFile(
+                    AudioManagement.CreateStreamByFile(
                         PathConverter.GetFailPathInProject(_audioList[ListBoxSelectedIndex].NameAudio),
                         VolumeValue);
-                    SliderMaximumValue = AudioManagement.GetTimeOfStream(AudioManagement.Stream);
+                    SliderMaximumValue = AudioManagement.GetTimeOfStream();
                     TextBlockAudioName = AudioList[ListBoxSelectedIndex].NameAudio;
-                    MaximumTimeAudio = TimeConverter.SecondsInString(AudioManagement.GetTimeOfStream(AudioManagement.Stream));
-
+                    MaximumTimeAudio = TimeConverter.SecondsInString(AudioManagement.GetTimeOfStream());
                 }
                 else
                 {
@@ -346,11 +345,11 @@ namespace AudioPlayer.ViewModels
 
         private void OnRewindAudioCommandExecuted(object parameter)
         {
-            AudioManagement.SetPositionScroll(AudioManagement.Stream, SliderValue);
-            trackTimer?.TimerStop();
+            AudioManagement.SetPositionScroll(SliderValue);
+            trackTimer?.StopTimer();
             if (_conditionStream == ConditionStream.Play)
             {
-                trackTimer.TimerStart(SliderValue);
+                trackTimer.StartTimer(SliderValue);
             }
             else
             {
@@ -375,7 +374,7 @@ namespace AudioPlayer.ViewModels
 
         private void OnVolumeChangedCommandExecuted(object parameter)
         {
-            AudioManagement.SetVolumeToStream(AudioManagement.Stream, VolumeValue);
+            AudioManagement.SetVolumeToStream(VolumeValue);
         }
 
         #endregion

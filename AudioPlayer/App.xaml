@@ -23,7 +23,7 @@
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
-        <ControlTemplate x:Key="SliderControlTemplateVolume" TargetType="{x:Type Slider}">
+        <ControlTemplate x:Key="SliderControlTemplateVertical" TargetType="{x:Type Slider}">
             <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -53,7 +53,7 @@
                 </Grid>
             </Border>
         </ControlTemplate>
-        <ControlTemplate x:Key="SliderControlTemplateTrack" TargetType="{x:Type Slider}">
+        <ControlTemplate x:Key="SliderControlTemplateHorizontal" TargetType="{x:Type Slider}">
             <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
                 <Grid>
                     <Grid.RowDefinitions>

@@ -1,5 +1,4 @@
-﻿using AudioPlayer.Infrastructure.Management;
-using System.Windows;
+﻿using System.Windows;
 
 namespace AudioPlayer
 {

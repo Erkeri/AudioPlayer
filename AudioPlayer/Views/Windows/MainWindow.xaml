@@ -210,7 +210,7 @@
                         VerticalAlignment="Center"
                         Minimum="0"
                         Maximum="{Binding SliderMaximumValue, Mode=OneWay}"
-                        Value="{Binding SliderValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Template="{DynamicResource SliderControlTemplateTrack}">
+                        Value="{Binding SliderValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Template="{DynamicResource SliderControlTemplateHorizontal}">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="PreviewMouseUp">
                             <i:InvokeCommandAction Command="{Binding RewindAudioCommand}"/>
@@ -274,7 +274,7 @@
                        Orientation="Vertical"
                        Margin="1 0 0 0"
                        Maximum="{Binding VolumeMaximumValue, Mode=OneTime}"
-                       Value="{Binding  VolumeValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Template="{DynamicResource SliderControlTemplateVolume}">
+                       Value="{Binding  VolumeValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Template="{DynamicResource SliderControlTemplateVertical}">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="ValueChanged">
                             <i:InvokeCommandAction Command="{Binding VolumeChangedCommand}"/>
@@ -289,7 +289,11 @@
             <Grid
                  Style="{StaticResource GridStyle}"
                  Grid.Row="1">
-                <Border Style="{StaticResource BorderStyle}"/>
+                <Border Style="{StaticResource BorderStyle}"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="15"
+                        Grid.Row="0"
+                        Grid.RowSpan="5"/>
             </Grid>
         </Grid>
     </Grid>

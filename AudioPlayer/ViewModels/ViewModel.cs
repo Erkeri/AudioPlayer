@@ -15,9 +15,7 @@ namespace AudioPlayer.ViewModels
         protected virtual bool Set<T>(ref T filed, T value, [CallerMemberName] string propertyName = null)
         {
             if (Equals(filed, value))
-            {
                 return false;
-            }
             else
             {
                 filed = value;

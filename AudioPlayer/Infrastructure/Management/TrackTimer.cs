@@ -5,7 +5,7 @@ namespace AudioPlayer.Infrastructure.Management
 {
     internal class TrackTimer
     {
-        private DispatcherTimer _timer = null;
+        private DispatcherTimer timer = null;
         private Action TimerTick;
 
         /// <summary>
@@ -16,25 +16,25 @@ namespace AudioPlayer.Infrastructure.Management
         /// <summary>
         /// Запускает таймер
         /// </summary>
-        public void TimerStart(int startValue = 0)
+        public void StartTimer(int startValue = 0)
         {
             CurrentTimerValue = startValue;
-            _timer = new DispatcherTimer();
-            _timer.Tick += new EventHandler(_timerTick);
-            _timer.Interval = new TimeSpan(0, 0, 0, 1);
-            _timer.Start();
+            timer = new DispatcherTimer();
+            timer.Tick += new EventHandler(_timerTick);
+            timer.Interval = new TimeSpan(0, 0, 0, 1);
+            timer.Start();
         }
 
         /// <summary>
         /// Остонавливает таймер
         /// </summary>
-        public void TimerStop()
+        public void StopTimer()
         {
-            if (_timer != null)
+            if (timer != null)
             {
-                _timer.Tick -= new EventHandler(_timerTick);
-                _timer.Stop();
-                _timer = null;
+                timer.Tick -= new EventHandler(_timerTick);
+                timer.Stop();
+                timer = null;
             }
         }
 
@@ -52,9 +52,6 @@ namespace AudioPlayer.Infrastructure.Management
         /// <param name="customTimerTick"></param>
         public TrackTimer(Action customTimerTick) => TimerTick = customTimerTick;
 
-        ~TrackTimer()
-        {
-            TimerStop();
-        }
+        ~TrackTimer() => StopTimer();
     }
 }

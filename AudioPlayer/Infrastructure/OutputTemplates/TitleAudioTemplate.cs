@@ -1,7 +1,4 @@
-﻿using AudioPlayer.Properties;
-using System.Drawing;
-
-namespace AudioPlayer.Infrastructure.OutputTemplates
+﻿namespace AudioPlayer.Infrastructure.OutputTemplates
 {
     public class TitleAudioTemplate
     {
